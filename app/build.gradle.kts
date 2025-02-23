@@ -56,4 +56,15 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    /// add common modules framework , data and domain
+    implementation(project(":common:framework"))
+    implementation(project(":common:data"))
+    implementation(project(":common:domain"))
+
+    /// add feature modules
+    implementation(project(":feature:chat"))
+    implementation(project(":feature:conversations"))
+    implementation(project(":feature:create_chat"))
+
 }
