@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt)
 }
 
 android {
@@ -42,6 +44,7 @@ android {
 dependencies {
 
     implementation(libs.androidx.core.ktx)
+    ksp(libs.hilt.android.compiler)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
@@ -56,6 +59,8 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    implementation(libs.hilt.android)
+    implementation(libs.hilt.navigation.compose)
 
     /// add common modules framework , data and domain
     implementation(project(":common:framework"))
@@ -66,5 +71,7 @@ dependencies {
     implementation(project(":feature:chat"))
     implementation(project(":feature:conversations"))
     implementation(project(":feature:create_chat"))
+
+
 
 }
